@@ -17,6 +17,21 @@ module.exports = function(grunt) {
     }
 	 });
 
-  	grunt.registerTask('default', ['traceur']);
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.config('requirejs', {
+      compile: {
+        options: {
+          baseUrl: "src/legacy-AMD",
+          paths: {
+            lodash: "../../bower_components/lodash/dist/lodash",
+            angular: "../../bower_components/angular/angular"
+          },
+          name: "main",
+          out: "dist/app.js"
+        }
+      }
+   });
+
+  	grunt.registerTask('default', ['requirejs']);
 
 };

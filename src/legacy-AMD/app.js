@@ -13,12 +13,7 @@ define(["angular", "question-page-controller", "question-directive", "question-s
         };
 
         var bootstrap = function (app) {
-            var deferred = Q.defer();
-            var injector = angular.bootstrap(angular.element(document.querySelector('#angular-app')), ['SampleApp']);
-            deferred.resolve([injector, app]);
-
-            return deferred.promise;
-
+            angular.bootstrap(angular.element(document.querySelector('#angular-app')), ['SampleApp']);
         };
 
         return {

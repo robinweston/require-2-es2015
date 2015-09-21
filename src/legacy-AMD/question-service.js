@@ -17,10 +17,11 @@ define([], function() {
     				name: "Question 3",
     				question: "Is this question showing?"
     			}
-    		]
+    		];
         }
 
         return {
         	getQuestions: getQuestions
         };
-}]);
+    };
+});
