@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'src/es2015',
         src: ['*.js'],
-        dest: 'src/require'
+        dest: 'src/new-AMD'
       }]
     }
 	 });
