@@ -4,7 +4,12 @@
 	</head>
 	<body>
 
-		
+		<div id="angular-app" class="ng-scope" data-ng-controller="questionPageController">
+		    <div data-ng-repeat="q in questions">
+		    	<question-directive data-question="q"/>
+		    </div>
+		</div>
+
 		<script src="../dist/app.js"></script>
 	</body>
 </html>
