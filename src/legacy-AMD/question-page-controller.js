@@ -1,6 +1,6 @@
 define(["lodash"], function(_) {
     
-    return function(questionService) {
+    return function($scope, questionService) {
 
     	var questions = questionService.getQuestions();
     	var filteredQuestions = _.pick(questions, function(value, key) {

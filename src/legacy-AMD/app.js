@@ -7,7 +7,7 @@ define(["angular", "question-page-controller", "question-directive", "question-s
 
             app.directive('questionDirective', [questionDirective]);
             app.service('questionService', [questionService]);
-            app.controller('questionPageController', ["questionsService", questionPageController]);
+            app.controller('questionPageController', ["$scope", "questionService", questionPageController]);
 
             ng.bootstrap(angular.element(document.querySelector('#angular-app')), ['SampleApp']);
         };
