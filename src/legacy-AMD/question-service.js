@@ -1,6 +1,6 @@
 define([], function() {
 	return function () {
-        var getQuestions = function() {
+        this.getQuestions = function() {
     		return [
     			{ 
     				id: 1,
@@ -18,10 +18,6 @@ define([], function() {
     				question: "Is this question showing?"
     			}
     		];
-        }
-
-        return {
-        	getQuestions: getQuestions
         };
     };
 });
