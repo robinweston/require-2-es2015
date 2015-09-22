@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             angular: '../../bower_components/angular/angular',
             requireLib: "../../bower_components/requirejs/require"
           },
-          shims: {
+          shim: {
             angular: {
               exports: "angular"
             }
