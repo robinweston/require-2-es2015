@@ -24,10 +24,18 @@ module.exports = function(grunt) {
           baseUrl: "src/legacy-AMD",
           paths: {
             lodash: "../../bower_components/lodash/dist/lodash",
-            angular: "../../bower_components/angular/angular"
+            angular: '../../bower_components/angular/angular',
+            requireLib: "../../bower_components/requirejs/require"
           },
+          shims: {
+            angular: {
+              exports: "angular"
+            }
+          },
+          include: ['requireLib'],
           name: "main",
-          out: "dist/app.js"
+          out: 'dist/main-built.js',
+          optimize: 'none'
         }
       }
    });

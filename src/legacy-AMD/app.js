@@ -9,15 +9,10 @@ define(["angular", "question-page-controller", "question-directive", "question-s
             app.directive('questionDirective', [questionDirective]);
             app.service('questionService', [questionDirective]);
 
-            return app;
-        };
-
-        var bootstrap = function (app) {
             angular.bootstrap(angular.element(document.querySelector('#angular-app')), ['SampleApp']);
         };
 
         return {
-            init: init,
-            bootstrap: bootstrap
+            init: init
         };
     });
