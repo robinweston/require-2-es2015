@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           },
           include: ['requireLib'],
           name: "main",
-          out: 'dist/main-built.js',
+          out: 'dist/legacy-AMD.js',
           optimize: 'none'
         }
       }
