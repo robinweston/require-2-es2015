@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import ng from 'angular';
     
 class QuestionController {
 
