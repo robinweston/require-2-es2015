@@ -44,13 +44,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.config('copy', {
     "es2015-to-generated-AMD": {
-      files: [
-        {
+      files: [{
           expand:true, 
           src: ['**/*', '!**/*.es2015.js'], 
           cwd: 'src/es2015/', 
-          dest: 'src/generated-AMD/'}
-      ]
+          dest: 'src/generated-AMD/'
+      }]
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.config('ngAnnotate', {
+    target: {
+      files: [{
+          expand:true, 
+          src: ['**/*'], 
+          cwd: 'src/generated-AMD/', 
+          dest: 'src/generated-AMD/'
+      }]
     }
   });
 
@@ -61,5 +72,5 @@ module.exports = function(grunt) {
    });
 
   	grunt.registerTask('legacy', ['requirejs:legacy']);
-    grunt.registerTask('es2015', ['copy:es2015-to-generated-AMD', 'babel', 'requirejs:generated']);
+    grunt.registerTask('es2015', ['copy:es2015-to-generated-AMD', 'babel', 'ngAnnotate', 'requirejs:generated']);
 };
