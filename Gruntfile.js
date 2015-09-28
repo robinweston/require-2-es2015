@@ -34,11 +34,19 @@ module.exports = function(grunt) {
       files: [{
         expand: true,
         cwd: 'src/es2015',
-        src: ['*.js'],
-        dest: 'src/generated-AMD'
+        src: ['*.es2015.js'],
+        dest: 'src/generated-AMD',
+        ext: '.js'
       }]
     }
 	 });
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.config('copy', {
+    "legacy-AMD-files": {
+
+    }
+  });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.config('requirejs', {
