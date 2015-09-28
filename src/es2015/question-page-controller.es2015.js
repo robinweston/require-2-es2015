@@ -1,6 +1,6 @@
 import _ from '../../bower_components/lodash/dist/lodash';
    
-export function createQuestionController($scope, questionService) {
+export default function ($scope, questionService) {
 
 	var questions = questionService.getQuestions();
 	var filteredQuestions = _.pick(questions, function(value, key) {
