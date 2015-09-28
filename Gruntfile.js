@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     custom: {
       files: [{
         expand: true,
-        cwd: 'src/es2015',
+        cwd: 'src/generated-AMD',
         src: ['*.es2015.js'],
         dest: 'src/generated-AMD',
         ext: '.js'
@@ -43,8 +43,14 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.config('copy', {
-    "legacy-AMD-files": {
-
+    "es2015-to-generated-AMD": {
+      files: [
+        {
+          expand:true, 
+          src: ['**/*'], 
+          cwd: 'src/es2015/', 
+          dest: 'src/generated-AMD/'}
+      ]
     }
   });
 
@@ -55,5 +61,5 @@ module.exports = function(grunt) {
    });
 
   	grunt.registerTask('legacy', ['requirejs:legacy']);
-    grunt.registerTask('es2015', ['traceur', 'requirejs:generated']);
+    grunt.registerTask('es2015', ['copy:es2015-to-generated-AMD', 'traceur', 'requirejs:generated']);
 };
