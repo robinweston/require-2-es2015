@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     custom: {
       files: [{
         expand: true,
-        cwd: 'src/generated-AMD',
+        cwd: 'src/es2015',
         src: ['*.es2015.js'],
         dest: 'src/generated-AMD',
         ext: '.js'
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       files: [
         {
           expand:true, 
-          src: ['**/*'], 
+          src: ['**/*', '!**/*.es2015.js'], 
           cwd: 'src/es2015/', 
           dest: 'src/generated-AMD/'}
       ]
