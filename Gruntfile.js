@@ -25,12 +25,12 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({});
 
-	grunt.loadNpmTasks('grunt-traceur');
-	grunt.config('traceur', {
+	grunt.loadNpmTasks('grunt-babel');
+	grunt.config('babel', {
     options: {
       modules: 'amd'
     },
-    custom: {
+    dist: {
       files: [{
         expand: true,
         cwd: 'src/es2015',
@@ -61,5 +61,5 @@ module.exports = function(grunt) {
    });
 
   	grunt.registerTask('legacy', ['requirejs:legacy']);
-    grunt.registerTask('es2015', ['copy:es2015-to-generated-AMD', 'traceur', 'requirejs:generated']);
+    grunt.registerTask('es2015', ['copy:es2015-to-generated-AMD', 'babel', 'requirejs:generated']);
 };
