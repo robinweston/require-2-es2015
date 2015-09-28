@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Sample App</title>
+	</head>
+	<body>
+
+		<div id="angular-app" data-ng-controller="questionPageController">
+		    <div data-ng-repeat="q in questions">
+		    	<question-directive data-question="q"/>
+		    </div>
+		</div>
+
+		<script src="../../dist/es2015/js"></script>
+	</body>
+</html>
