@@ -1,4 +1,4 @@
-define(['exports', 'module', 'lodash'], function (exports, module, _lodash) {
+define(['exports', 'module', 'lodash', 'angular'], function (exports, module, _lodash, _angular) {
 	'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -7,7 +7,12 @@ define(['exports', 'module', 'lodash'], function (exports, module, _lodash) {
 
 	var _2 = _interopRequireDefault(_lodash);
 
-	var QuestionController = function QuestionController($scope, questionService) {
+	var _ng = _interopRequireDefault(_angular);
+
+	var QuestionController =
+
+	/*@ngInject*/
+	["$scope", "questionService", function QuestionController($scope, questionService) {
 		_classCallCheck(this, QuestionController);
 
 		var questions = questionService.getQuestions();
@@ -16,7 +21,7 @@ define(['exports', 'module', 'lodash'], function (exports, module, _lodash) {
 		});
 
 		$scope.questions = filteredQuestions;
-	};
+	}];
 
 	module.exports = QuestionController;
 });

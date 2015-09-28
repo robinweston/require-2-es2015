@@ -1,7 +1,9 @@
 import _ from 'lodash';
+import ng from 'angular';
     
 class QuestionController {
 
+	/*@ngInject*/
 	constructor($scope, questionService) {
 		let questions = questionService.getQuestions();
 		let filteredQuestions = _.pick(questions, function(value, key) {
